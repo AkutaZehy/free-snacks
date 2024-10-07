@@ -10,3 +10,4 @@
 | --- | --- | --- |
 | shutdown.bat | 关闭计算机 | 谨慎使用 |
 | clean_disk.bat | 清理C盘缓存 | 不知道从哪里整来的实用小脚本 |
+| restart_dwm.bat | 重启DWM | 用于解决Windows 10的DWM卡顿问题 |
