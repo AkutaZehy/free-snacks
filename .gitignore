@@ -1,0 +1,6 @@
+tools/resources/*
+
+tmp/*
+
+build/*
+*.exe
