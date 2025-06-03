@@ -17,4 +17,4 @@ gitbruh.bat使用需要配合resources/sentenses.txt文件，里面存储了一�
 
 ## 工具列表
 
-这里暂时还是空的
+这里暂时还是空的。
