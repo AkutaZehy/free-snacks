@@ -6,12 +6,13 @@
 
 ## 脚本列表
 
-| 脚本名称        | 说明          | 注释                            |
-| --------------- | ------------- | ------------------------------- |
-| shutdown.bat    | 关闭计算机    | 谨慎使用                        |
-| clean_disk.bat  | 清理C盘缓存   | 不知道从哪里整来的实用小脚本    |
-| restart_dwm.bat | 重启DWM       | 用于解决Windows 10的DWM卡顿问题 |
-| gitbruh.bat     | *BRUH* Commit | 用于快速提交Git代码             |
+| 脚本名称        | 说明                   | 注释                                                                                       |
+| --------------- | ---------------------- | ------------------------------------------------------------------------------------------ |
+| shutdown.bat    | 关闭计算机             | 谨慎使用                                                                                   |
+| clean_disk.bat  | 清理C盘缓存            | 不知道从哪里整来的实用小脚本                                                               |
+| restart_dwm.bat | 重启DWM                | 用于解决Windows 10的DWM卡顿问题                                                            |
+| gitbruh.bat     | *BRUH* Commit          | 用于快速提交Git代码                                                                        |
+| remove_znkt.bat | 移除〇〇网盘的智能看图 | 致谢：[Xzonn](https://xzonn.top/posts/Remove-Intelligent-Image-Viewer.html) （未授权搬运） |
 
 gitbruh.bat使用需要配合resources/sentenses.txt文件，里面存储了一些提交信息的句子。
 
