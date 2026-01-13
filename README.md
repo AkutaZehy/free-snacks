@@ -20,13 +20,13 @@ gitbruh.bat使用需要配合resources/sentenses.txt文件，里面存储了一�
 
 ## 工具列表
 
-| 工具列表（含链接） | 说明 | 状态 | 架构 | AI使用情况 | AI | 其他说明 |
-| --- | --- | --- | --- | --- | --- | --- |
-| [Color Compass](https://github.com/AkutaZehy/color-compass) | 轻量级、用户友好的工具，旨在从图像中提取调色板，并以3D形式可视化色彩空间。 | 可能有应用方向，Demo，停滞。 | 纯前端（html+css+js）+[Three.js](https://github.com/mrdoob/three.js) | 核心算法由自己提出，实际编写交由AI。 | Gemini Pro 2.5 |  |
-| [SRT2SUB](https://github.com/AkutaZehy/srt2sub) | 用于将*.srt字幕渲染到Adobe After Effects中的文本层。 | 其实没啥用0.0 | 纯前端（html+js） | 未使用AI。 | / |  |
-| [Annoti](https://github.com/AkutaZehy/Annoti) | 一个阅读的工具，主要用于阅读时批注的需求。 | v1.0.0 dev | Vue 3+Tauri 2+SQLite | 核心算法由自己提出，实际编写交由AI Agent。 | Claude Code Router + MiniMax-M2.1 |  |
-| [blocky-markdown](https://github.com/AkutaZehy/blocky-markdown) | 一个极简主义的Markdown编辑器，具有基于块的界面，提供与WordPress类似的编辑体验。 | v1.0.0 release | 纯前端（html+css+js）+[Marked.js](https://github.com/markedjs/marked) | 核心算法由自己提出，实际编写交由AI Agent。 | Copilot coding agent(Github, Claude Sonnet 4.5) | 基本功能差不多了，有建议可以提issue。 |
-| [WaveGenQ](https://github.com/AkutaZehy/WaveGenQ) | 从音频文件快速生成波形图像，并可自定义颜色和透明背景。 | V1.0.0 | 纯前端（html+css+js） | 完全AI生成。 | Copilot coding agent(Github, Claude Sonnet 4.5) |  |
+| 工具列表（含链接） | 说明 | 状态 | 架构 | AI使用情况 | AI | 
+| --- | --- | --- | --- | --- | --- | 
+| [Color Compass](https://github.com/AkutaZehy/color-compass) | 轻量级、用户友好的工具，旨在从图像中提取调色板，并以3D形式可视化色彩空间。 | 可能有应用方向，Demo，停滞。 | 纯前端（html+css+js）+[Three.js](https://github.com/mrdoob/three.js) | 核心算法由自己提出，实际编写交由AI。 | Gemini Pro 2.5 | 
+| [SRT2SUB](https://github.com/AkutaZehy/srt2sub) | 用于将*.srt字幕渲染到Adobe After Effects中的文本层。 | 其实没啥用0.0 | 纯前端（html+js） | 未使用AI。 | / | 
+| [Annoti](https://github.com/AkutaZehy/Annoti) | 一个阅读的工具，主要用于阅读时批注的需求。 | v1.0.0 dev | Vue 3+Tauri 2+SQLite | 核心算法由自己提出，实际编写交由AI Agent。 | Claude Code Router + MiniMax-M2.1 |
+| [blocky-markdown](https://github.com/AkutaZehy/blocky-markdown) | 一个极简主义的Markdown编辑器，具有基于块的界面，提供与WordPress类似的编辑体验。 | v1.0.0 release | 纯前端（html+css+js）+[Marked.js](https://github.com/markedjs/marked) | 核心算法由自己提出，实际编写交由AI Agent。 | Copilot coding agent(Github, Claude Sonnet 4.5) |
+| [WaveGenQ](https://github.com/AkutaZehy/WaveGenQ) | 从音频文件快速生成波形图像，并可自定义颜色和透明背景。 | V1.0.0 | 纯前端（html+css+js） | 完全AI生成。 | Copilot coding agent(Github, Claude Sonnet 4.5) | 
 
 ~~因为实在是看nodejs这种重量级不顺眼~~
 
@@ -68,7 +68,9 @@ forked from [srt-to-AfterEffects-Captions](https://github.com/Slayemus/srt-to-Af
 
 无论VSCode还是Typora还是太麻烦了想着自己做一个；
 
-另外一个为什么说WordPress呢，其实WP还是蛮好用的我是真心喜欢Gutenberg，但是要联网加上卡到飞起的体验让我不得不想整一个本地的编辑器lmao。
+另外一个为什么说WordPress呢，其实WP的Gutenberg还是蛮好用的，但是要联网加上卡到飞起的体验让我不得不想整一个本地的编辑器lmao。
+
+这个做完了我是真心喜欢，有啥想法也也欢迎提issue（虽然不一定做就是了）
 
 ### WaveGenQ
 
