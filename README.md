@@ -18,16 +18,17 @@ Warning: This repository does not provide README in **any** other languages ​�
 
 gitbruh.bat使用需要配合resources/sentenses.txt文件，里面存储了一些提交信息的句子。
 
-## 工具列表
+## 工具列表~~Wheel Builds~~
 
 | 工具列表（含链接） | 说明 | 状态 | 架构 | AI使用情况 | AI | 工具构建时间 |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Color Compass](https://github.com/AkutaZehy/color-compass) | 轻量级、用户友好的工具，旨在从图像中提取调色板，并以3D形式可视化色彩空间。 | 可能有应用方向，Demo，停滞。 | 纯前端（html+css+js）+[Three.js](https://github.com/mrdoob/three.js) | 核心算法由自己提出，实际编写交由AI。 | Gemini Pro 2.5 | 2025.06 |
-| [SRT2SUB](https://github.com/AkutaZehy/srt2sub) | 用于将*.srt字幕渲染到Adobe After Effects中的文本层。 | 其实没啥用0.0 | 纯前端（html+js） | 未使用AI。 | / | 2025.08 |
+| [Color Compass](https://github.com/AkutaZehy/color-compass) | 轻量级、用户友好的工具，旨在从图像中提取调色板，并以3D形式可视化色彩空间。 | 可能有应用方向，Demo，停滞。 | 纯前端（HTML+CSS+JS）+[Three.js](https://github.com/mrdoob/three.js) | 核心算法由自己提出，实际编写交由AI。 | Gemini Pro 2.5 | 2025.06 |
+| [SRT2SUB](https://github.com/AkutaZehy/srt2sub) | 用于将*.srt字幕渲染到Adobe After Effects中的文本层。 | 其实没啥用0.0 | 纯前端（HTML+JS） | 未使用AI。 | / | 2025.08 |
 | [Annoti](https://github.com/AkutaZehy/Annoti) | 一个阅读的工具，主要用于阅读时批注的需求。 | v1.0.0 dev | Vue 3+Tauri 2+SQLite | 核心算法由自己提出，实际编写交由AI Agent。 | Claude Code Router + MiniMax-M2.1 | 2025.12 |
-| [blocky-markdown](https://github.com/AkutaZehy/blocky-markdown) | 一个极简主义的Markdown编辑器，具有基于块的界面，提供与WordPress类似的编辑体验。 | v1.0.0 release | 纯前端（html+css+js）+[Marked.js](https://github.com/markedjs/marked) | 核心算法由自己提出，实际编写交由AI Agent。 | Copilot coding agent(Github, Claude Sonnet 4.5) | 2025.10 |
-| [WaveGenQ](https://github.com/AkutaZehy/WaveGenQ) | 从音频文件快速生成波形图像，并可自定义颜色和透明背景。 | V1.0.0 | 纯前端（html+css+js） | 完全AI生成。 | Copilot coding agent(Github, Claude Sonnet 4.5) | 2025.11 |
+| [blocky-markdown](https://github.com/AkutaZehy/blocky-markdown) | 一个极简主义的Markdown编辑器，具有基于块的界面，提供与WordPress类似的编辑体验。 | v1.0.0 release | 纯前端（HTML+CSS+JS）+[Marked.js](https://github.com/markedjs/marked) | 核心算法由自己提出，实际编写交由AI Agent。 | Copilot coding agent(Github, Claude Sonnet 4.5) | 2025.10 |
+| [WaveGenQ](https://github.com/AkutaZehy/WaveGenQ) | 从音频文件快速生成波形图像，并可自定义颜色和透明背景。 | V1.0.0 | 纯前端（HTML+CSS+JS） | 完全AI生成。 | Copilot coding agent(Github, Claude Sonnet 4.5) | 2025.11 |
 | [key-statics](https://github.com/AkutaZehy/key-statics) | 轻量级Windows桌面应用程序，后端监听全局键盘输入并通过HTTP Server显示虚拟键盘叠加层，适用于桌面端OBS Browser Source集成设计。 | v1.0.0 release | Qt 6(C++17) | 核心算法由自己提出，实际编写交由AI Agent。 | OpenCode+ MiniMax-M2.5 | 2026.02 |
+| [GitGUI](https://github.com/AkutaZehy/GitGUI) | Git 桌面版 | v1.1.0 release | 后端Wails v2 (Go + WebView) <br>前端React + TS | 核心算法由自己提出，实际编写交由AI Agent。 | OpenCode+ MiniMax-M2.5 | 2026.03 |
 
 ~~因为实在是看nodejs这种重量级不顺眼~~
 
@@ -87,4 +88,16 @@ forked from [srt-to-AfterEffects-Captions](https://github.com/Slayemus/srt-to-Af
 
 说起来也比较好玩，自己完整构建的第一个Qt应用，但其实自己不太能看懂C++。~~能用就行~~
 
-另外算法上，KPS采用了指数移动平均（EMA），公式为：$$\text{KPS}_{\text{ema}} = \alpha \times \text{KPS}_{\text{instant}} + (1 - \alpha) \times \text{KPS}_{\text{ema_prev}}$$，适用于OSU等音游。
+另外算法上，KPS采用了指数移动平均（EMA），适用于OSU等音游。公式为：
+
+$$\text{KPS}_{\text{ema}} = \alpha \times \text{KPS}_{\text{instant}} + (1 - \alpha) \times \text{KPS}_{\text{ema_prev}}$$
+
+### GitGUI
+
+一个非常好懂的名字，就是Git+GUI，因为Git Desktop有时候还是不大好用（功能太多了有点）。
+
+在想有没有既不用Obj C/CPP（Qt）/.NET的方案（拿微软没辙了），又不用electron的。Flutter开发实在不太满意，写起来有点不爽；Tauri的Rust编译起来还是有点太慢了，而且其他弊病不小。
+
+于是又找到了Wails，使用Go后端，这是第一个Wails应用。
+
+因为前端可以WebView+React所以没啥大毛病，Go除了语法抽象了点~~`if err != nil`笑死~~确实是个好语言。
