@@ -28,7 +28,7 @@ gitbruh.bat使用需要配合resources/sentenses.txt文件，里面存储了一�
 | [blocky-markdown](https://github.com/AkutaZehy/blocky-markdown) | 一个极简主义的Markdown编辑器，具有基于块的界面，提供与WordPress类似的编辑体验。 | v1.0.0 release | 纯前端（HTML+CSS+JS）+[Marked.js](https://github.com/markedjs/marked) | 核心算法由自己提出，实际编写交由AI Agent。 | Copilot coding agent(Github, Claude Sonnet 4.5) | 2025.10 |
 | [WaveGenQ](https://github.com/AkutaZehy/WaveGenQ) | 从音频文件快速生成波形图像，并可自定义颜色和透明背景。 | V1.0.0 | 纯前端（HTML+CSS+JS） | 完全AI生成。 | Copilot coding agent(Github, Claude Sonnet 4.5) | 2025.11 |
 | [key-statics](https://github.com/AkutaZehy/key-statics) | 轻量级Windows桌面应用程序，后端监听全局键盘输入并通过HTTP Server显示虚拟键盘叠加层，适用于桌面端OBS Browser Source集成设计。 | v1.0.0 release | Qt 6(C++17) | 核心算法由自己提出，实际编写交由AI Agent。 | OpenCode+ MiniMax-M2.5 | 2026.02 |
-| [GitGUI](https://github.com/AkutaZehy/GitGUI) | Git 桌面版 | v1.1.0 release | 后端Wails v2 (Go + WebView) <br>前端React + TS | 核心算法由自己提出，实际编写交由AI Agent。 | OpenCode+ MiniMax-M2.5 | 2026.03 |
+| [GitGUI](https://github.com/AkutaZehy/GitGUI) | Git 桌面版 | v1.2.0 release | 后端Wails v2 (Go + WebView) <br>前端React + TS | 核心算法由自己提出，实际编写交由AI Agent。 | OpenCode+ MiniMax-M2.5 | 2026.03 |
 
 ~~因为实在是看nodejs这种重量级不顺眼~~
 
@@ -90,7 +90,9 @@ forked from [srt-to-AfterEffects-Captions](https://github.com/Slayemus/srt-to-Af
 
 另外算法上，KPS采用了指数移动平均（EMA），适用于OSU等音游。公式为：
 
-$$\text{KPS}_{\text{ema}} = \alpha \times \text{KPS}_{\text{instant}} + (1 - \alpha) \times \text{KPS}_{\text{ema_prev}}$$
+$$
+KPS_{ema} = \alpha \cdot KPS_{instant} + (1-\alpha) \cdot KPS_{ema,prev}
+$$
 
 ### GitGUI
 
@@ -100,4 +102,4 @@ $$\text{KPS}_{\text{ema}} = \alpha \times \text{KPS}_{\text{instant}} + (1 - \al
 
 于是又找到了Wails，使用Go后端，这是第一个Wails应用。
 
-因为前端可以WebView+React所以没啥大毛病，Go除了语法抽象了点~~`if err != nil`笑死~~确实是个好语言。
+因为前端可以WebView+React所以没啥大毛病，Go除了语法抽象了点确实是个好语言。<s>`if err != nil`笑死</s>
