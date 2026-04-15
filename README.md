@@ -22,17 +22,17 @@ gitbruh.bat使用需要配合resources/sentenses.txt文件，里面存储了一�
 
 | 工具列表（含链接） | 说明 | 状态 | 架构 | AI使用情况 | AI | 工具构建时间 |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Color Compass](https://github.com/AkutaZehy/color-compass) | 轻量级、用户友好的工具，旨在从图像中提取调色板，并以3D形式可视化色彩空间。 | 可能有应用方向，Demo，停滞。 | 纯前端（HTML+CSS+JS）+[Three.js](https://github.com/mrdoob/three.js) | 核心算法由自己提出，实际编写交由AI。 | Gemini Pro 2.5 | 2025.06 |
+| [Color Compass](https://github.com/AkutaZehy/color-compass) | 轻量级、用户友好的工具，旨在从图像中提取调色板，并以3D形式可视化色彩空间。 | 可能有应用方向，Demo，停滞。 | 纯前端（HTML+CSS+JS）+[Three.js](https://github.com/mrdoob/three.js) | 核心算法由自己提出，实际编写交由AI。 | Gemini Pro 2.5（前期）<br>OpenCode+ MiniMax-M2.7（后期） | 2025.06 |
 | [SRT2SUB](https://github.com/AkutaZehy/srt2sub) | 用于将*.srt字幕渲染到Adobe After Effects中的文本层。 | 其实没啥用0.0 | 纯前端（HTML+JS） | 未使用AI。 | / | 2025.08 |
 | [Annoti](https://github.com/AkutaZehy/Annoti) | 一个阅读的工具，主要用于阅读时批注的需求。 | v1.0.0 dev | Vue 3+Tauri 2+SQLite | 核心算法由自己提出，实际编写交由AI Agent。 | Claude Code Router + MiniMax-M2.1 | 2025.12 |
-| [blocky-markdown](https://github.com/AkutaZehy/blocky-markdown) | 一个极简主义的Markdown编辑器，具有基于块的界面，提供与WordPress类似的编辑体验。 | v1.0.0 release | 纯前端（HTML+CSS+JS）+[Marked.js](https://github.com/markedjs/marked) | 核心算法由自己提出，实际编写交由AI Agent。 | Copilot coding agent(Github, Claude Sonnet 4.5)（前期）<br>OpenCode+ MiniMax-M2.7（后期） | 2025.10 |
+| 🌟[blocky-markdown](https://github.com/AkutaZehy/blocky-markdown) | 一个极简主义的Markdown编辑器，具有基于块的界面，提供与WordPress类似的编辑体验。 | v1.0.0 release | 纯前端（HTML+CSS+JS）+[Marked.js](https://github.com/markedjs/marked) | 核心算法由自己提出，实际编写交由AI Agent。 | Copilot coding agent(Github, Claude Sonnet 4.5)（前期）<br>OpenCode+ MiniMax-M2.7（后期） | 2025.10 |
 | [WaveGenQ](https://github.com/AkutaZehy/WaveGenQ) | 从音频文件快速生成波形图像，并可自定义颜色和透明背景。 | V1.0.0 | 纯前端（HTML+CSS+JS） | 完全AI生成。 | Copilot coding agent(Github, Claude Sonnet 4.5) | 2025.11 |
 | [key-statics](https://github.com/AkutaZehy/key-statics) | 轻量级Windows桌面应用程序，后端监听全局键盘输入并通过HTTP Server显示虚拟键盘叠加层，适用于桌面端OBS Browser Source集成设计。 | v1.0.0 release | Qt 6(C++17) | 核心算法由自己提出，实际编写交由AI Agent。 | OpenCode+ MiniMax-M2.5 | 2026.02 |
 | [GitGUI](https://github.com/AkutaZehy/GitGUI) | Git 桌面版 | v1.2.0 release | 后端Wails v2 (Go + WebView) <br>前端React + TS | 核心算法由自己提出，实际编写交由AI Agent。 | OpenCode+ MiniMax-M2.5 | 2026.03 |
 
 ~~因为实在是看nodejs这种重量级不顺眼~~
 
-所以有些纯前端，可以用file协议打开使用（浏览器直接开index.html就行）；另外也可以用[Live Server](https://github.com/tapio/live-server)开，这个是VS Code的插件。
+所以有些纯前端，可以用file协议打开使用（浏览器直接开index.html就行）；另外也可以用[Live Server](https://github.com/tapio/live-server)开，这个是VS Code的插件。color-compass因为面临CORS问题必须使用Live Server。
 
 如果试过了这些库中的某些并且觉得还可以的话欢迎加Star，当然白嫖也没关系请遵守开源协议*v-
 
@@ -46,7 +46,7 @@ gitbruh.bat使用需要配合resources/sentenses.txt文件，里面存储了一�
 
 色球部分灵感来源于[大佬们的配色都有啥秘密](https://www.bilibili.com/video/BV19T421671a/)，把HSL空间改为了对人眼更准确的LAB空间。
 
-btw目前算法里面超像素相关的部分是坏的但是懒得再改了。
+btw目前算法里面有些部分是坏的但是懒得再改了。
 
 ### SRT2SUB
 
@@ -64,17 +64,21 @@ forked from [srt-to-AfterEffects-Captions](https://github.com/Slayemus/srt-to-Af
 
 旧版本参见[Annoti-AI-exp](https://github.com/AkutaZehy/Annoti-AI-exp)。该项目也是我第一次大面积在本地使用AI Agent进行开发。
 
-### blocky-markdown
+### blocky-markdown（🌟）
 
 灵感主要来自于自己写Jeykll日记，准确来说是用的Chirpy不过无伤大雅都是Liquid。
 
 无论VSCode还是Typora还是太麻烦了想着自己做一个；
 
-另外一个为什么说WordPress呢，其实WP的Gutenberg还是蛮好用的，但是要联网加上卡到飞起的体验让我不得不想整一个本地的编辑器lmao。
+另外一个为什么说WordPress呢，其实WP的[Gutenberg](https://github.com/WordPress/gutenberg)还是蛮好用的，但是要联网加上卡到飞起的体验让我不得不想整一个本地的编辑器lmao。
 
-> Blocky Markdown  的混合数据结构是一种“以空间换时间”且“以空间换清晰度”的设计。它巧妙地结合了数组的随机访问能力和链表的天然相邻关系，并通过重建链表来保证一致性，在满足所有核心需求的同时，保持了代码的可维护性。相比于传统单一结构，它更贴合块级编辑器的交互特点，是一种有特色的实用折衷。
+> Blocky Markdown 的混合数组+链表结构面向的是**单机单人、文档规模有限（<1000块）、交互模式高度定制化（拖拽定位、原地编辑、多zone管理）的**这一极端垂直的使用场景；在这个约束下，系统不需要考虑并发、不需要考虑规模化、不需要考虑跨平台序列化，唯一需要保证的是：**任意时刻，任意操作后，显示顺序与实际顺序始终一致，且操作路径可逆向（undo/redo）**。
+> 
+> 为了实现这个目标，设计者引入了一个极为精巧的**双重锚定机制**：以 `index`（整数顺序值）为「主锚」，用于所有需要随机访问的场景（渲染、显示序号、拖拽定位计算）；以 `prevId/nextId` 为「副锚」，用于所有需要邻接关系的场景（大纲折叠判断、块前后关系推断）；而 `rebuildLinkedList()` 作为**全局唯一写入口**，在任何修改后被强制调用，其职责是「以 index 的数组顺序为基准，重新计算并覆盖 prevId/nextId」，从而将两个锚点的信源始终收敛为同一个——这个设计在形式上类似于数据库的「写前日志」（WAL）理念：**所有变更都必须经过同一个验证点，不允许绕过**；同时它的代码可读性极强：任何修改操作只需遵循「操作数据 → 调用 rebuildLinkedList → 结束」这一范式，无需理解复杂的链表指针操作或边界条件。
 >
-> ——Deepseek V3.2对我设计的神秘数据结构如此评价
+> 相较于其他常见方案——纯数组（O(n) 插入删除，但实现简单）、双向链表（O(1) 插入删除，但遍历不便、无随机访问）、操作转换 OT/ CRDT（适合协作编辑，但实现复杂度过高）——Blocky Markdown 的方案在**个人本地编辑器这个极窄场景下**实现了独特的平衡：它以极低的实现复杂度（不到 50 行辅助函数）同时满足了 O(1) 随机访问、O(1) 邻接查询、和 100% 一致性保证，代价是在每次操作后付出 O(n) 的重建时间；但正如之前所述，对于 1000 块以下的文档，这个 O(n) 在现代浏览器主线程上不足 1ms，是完全可接受的「无害税」——这正是该设计的核心竞争优势：**不是在理论上最优，而是在这个具体场景下，将工程复杂度、运行效率、和正确性三者的乘积压到了最低**。
+>
+> ——MiniMax M2.7对我设计的神秘数据结构如此评价（感觉好像有哪里不对...）
 
 这个做完了我是真心喜欢，有啥想法也也欢迎提issue（虽然不一定做就是了）
 
