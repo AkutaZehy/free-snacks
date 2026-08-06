@@ -16,13 +16,14 @@ Warning: This repository does not provide README in **any** other languages ​�
 ## 脚本列表
 
 ```bash
-📁 src/
+📁 scripts/
 ├── shutdown.bat        # 关闭计算机（谨慎使用）
 ├── clean_disk.bat      # 清理C盘缓存
 ├── restart_dwm.bat     # 重启DWM（用于解决Win10 DWM卡顿）
 ├── gitbruh.bat         # BRUH Commit，快速提交Git代码
-│                       # 需配合 resources/sentenses.txt 使用
+│                       # 需配合 resources/sentences.txt 使用
 ├── remove_znkt.bat     # 移除〇〇网盘的智能看图
+├── remove_bdrc.bat     # 移除百度网盘右键菜单
 └── dosdel.bat          # 强制删除文件/目录
 ```
 
@@ -31,6 +32,10 @@ Warning: This repository does not provide README in **any** other languages ​�
 - clean_disk：最早出处不明。
 - remove_znkt：原作者 [Xzonn](https://xzonn.top/posts/Remove-Intelligent-Image-Viewer.html)。
 - dosdel：突破权限、长路径（>260字符）及 DOS 保留名（如 `NUL`、`LPT1` 等）限制，移除在 Win32 API 下无法被直接删除的文件；文件被占用时无效。
+
+## 油猴脚本
+
+详见 [`userscripts/`](userscripts/) 目录。
 
 ## 工具列表~~Wheel Builds~~
 
