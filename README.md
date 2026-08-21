@@ -24,7 +24,8 @@ Warning: This repository does not provide README in **any** other languages ​�
 │                       # 需配合 resources/sentences.txt 使用
 ├── remove_znkt.bat     # 移除〇〇网盘的智能看图
 ├── remove_bdrc.bat     # 移除百度网盘右键菜单
-└── dosdel.bat          # 强制删除文件/目录
+├── dosdel.bat          # 强制删除文件/目录
+└── remove_desktop_app_shortcuts.bat  # 移除桌面"应用类型"快捷方式（非文件夹），交互确认后送回收站
 ```
 
 附注：
@@ -32,6 +33,7 @@ Warning: This repository does not provide README in **any** other languages ​�
 - clean_disk：最早出处不明。
 - remove_znkt：原作者 [Xzonn](https://xzonn.top/posts/Remove-Intelligent-Image-Viewer.html)。
 - dosdel：突破权限、长路径（>260字符）及 DOS 保留名（如 `NUL`、`LPT1` 等）限制，移除在 Win32 API 下无法被直接删除的文件；文件被占用时无效。
+- remove_desktop_app_shortcuts：双击运行，先列出桌面所有快捷方式并标注类型（`[Application]`/`[Folder]`/`[OtherFile]`/`[Unknown]`），确认（`Y`）后才将"应用类型"——即指向 `.exe/.bat/.cmd/.com/.msi/.msp/.scr` 的快捷方式——送回收站（可恢复）；文件夹、其它文件、目标缺失或未知的快捷方式均保留。可选参数：`-Public`（同时扫描公共桌面）、`-IncludeUrl`（列出 `.url` 网页快捷方式，仅列不删）。不写日志。
 
 ## 油猴脚本
 

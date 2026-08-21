@@ -1,18 +1,17 @@
 @echo off
-chcp 65001 >nul
 
-echo 即将重启桌面管理器（DWM）。
-echo 屏幕会短暂闪烁，这是正常现象。
+echo Restarting Desktop Window Manager (DWM).
+echo The screen will flicker briefly; this is normal.
 echo.
-set /p "confirm=确认重启？(Y/N): "
+set /p "confirm=Restart DWM? (Y/N): "
 if /i not "%confirm%"=="Y" (
-    echo 已取消
+    echo Cancelled.
     pause
     exit /b 0
 )
 
-echo 正在重启 DWM...
+echo Restarting DWM...
 taskkill /f /im dwm.exe >nul 2>&1
 start dwm
-echo DWM 已重启。
+echo DWM restarted.
 pause
