@@ -44,20 +44,18 @@ Warning: This repository does not provide README in **any** other languages ​�
 <details>
 <summary><strong><a href="https://github.com/AkutaZehy/color-compass">Color Compass</a></strong> — 轻量级调色板提取工具，3D 色彩空间可视化</summary>
 
- ![](https://img.shields.io/badge/stack-Three.js-blue) ![](https://img.shields.io/badge/AI-Gemini_Pro_2.5-8A2BE2) ![](https://img.shields.io/badge/2025.06-888888)
-
 色板算法改自 [Color Thief](https://github.com/lokesh/color-thief)，为其引入了降采样和二阶段聚类。~~然而效果好像还没 color-thief 好~~
 
 色球部分灵感来源于[大佬们的配色都有啥秘密](https://www.bilibili.com/video/BV19T421671a/)，把 HSL 空间改为了对人眼更准确的 LAB 空间。
 
 btw 目前算法里面超像素相关的部分是坏的但是懒得再改了。
 
+![](https://img.shields.io/badge/stack-Three.js-blue) ![](https://img.shields.io/badge/AI-Gemini_Pro_2.5-8A2BE2) ![](https://img.shields.io/badge/2025.06-888888)
+
 </details>
 
 <details>
 <summary><strong><a href="https://github.com/AkutaZehy/Annoti">Annoti</a></strong> — 阅读批注工具</summary>
-
-![](https://img.shields.io/badge/status-v1.0.0__dev-orange) ![](https://img.shields.io/badge/stack-Vue_3+Tauri_2+SQLite-0052CC) ![](https://img.shields.io/badge/AI-MiniMax--M2.5-8A2BE2) ![](https://img.shields.io/badge/2025.12-888888)
 
 灵感主要来自于自己纸质阅读的批注，贴便利贴那种感觉。
 
@@ -67,12 +65,14 @@ btw 目前算法里面超像素相关的部分是坏的但是懒得再改了。
 
 旧版本参见 [Annoti-AI-exp](https://github.com/AkutaZehy/Annoti-AI-exp)。该项目也是我第一次大面积在本地使用 AI Agent 进行开发。
 
+现版本已基于 Wails v2（Go + SQLite）完全重写，历史上的 Tauri 实现存档于 [`archive/1.0.0-dev-tauri`](https://github.com/AkutaZehy/Annoti/tree/archive/1.0.0-dev-tauri) 分支。
+
+![](https://img.shields.io/badge/status-v1.0.0--delta-orange) ![](<https://img.shields.io/badge/stack-Wails_v2(Go)+Vue_3+SQLite-0052CC>) ![](https://img.shields.io/badge/harness-ZCode-009688) ![](https://img.shields.io/badge/AI-GLM_5.3+GLM_5.3_Flash-8A2BE2) ![](https://img.shields.io/badge/2026.09-888888)
+
 </details>
 
 <details>
-<summary><strong><a href="https://github.com/AkutaZehy/blocky-markdown">blocky-markdown</a>（⭐）</strong> — 类 Gutenburg 块级 Markdown 编辑器</summary>
-
-![](https://img.shields.io/badge/status-v1.0.0__release-brightgreen) ![](https://img.shields.io/badge/stack-pure_frontend+Marked.js-0052CC) ![](https://img.shields.io/badge/AI-Copilot_Sonnet_4.5-8A2BE2) ![](https://img.shields.io/badge/2025.10-888888)
+<summary><strong><a href="https://github.com/AkutaZehy/blocky-markdown">blocky-markdown</a>（⭐）</strong> — 类 Gutenberg 块级 Markdown 编辑器</summary>
 
 灵感主要来自于自己写 Jeykll 日记，准确来说是用的 Chirpy 不过无伤大雅都是 Liquid。
 
@@ -86,12 +86,12 @@ btw 目前算法里面超像素相关的部分是坏的但是懒得再改了。
 
 这个做完了我是真心喜欢，有啥想法也也欢迎提 issue（虽然不一定做就是了）
 
+![](https://img.shields.io/badge/status-v1.0.0__release-brightgreen) ![](https://img.shields.io/badge/stack-pure_frontend+Marked.js-0052CC) ![](https://img.shields.io/badge/harness-ZCode-009688) ![](https://img.shields.io/badge/AI-GLM_5.3+GLM_5.3_Flash-8A2BE2) ![](https://img.shields.io/badge/2026.09-888888)
+
 </details>
 
 <details>
 <summary><strong><a href="https://github.com/AkutaZehy/key-statics">key-statics</a></strong> — 键盘输入可视化叠加层（OBS 集成）</summary>
-
-![](https://img.shields.io/badge/status-v1.0.0__release-brightgreen) ![](<https://img.shields.io/badge/stack-Qt_6(C++17)-0052CC>) ![](https://img.shields.io/badge/AI-OpenCode+MiniMax--M2.5-8A2BE2) ![](https://img.shields.io/badge/2026.02-888888)
 
 灵感主要来自 [KeyboardOverlay](https://github.com/tiger2005/KeyboardOverlay)，但它的问题在于位于前台，不是很爽。学习了 [Now Playing](https://github.com/Widdit/now-playing-service)，使用后端监听并用 HTTP Server 渲染就好办了。
 
@@ -103,6 +103,17 @@ $$
 KPS_{ema} = \alpha \cdot KPS_{instant} + (1-\alpha) \cdot KPS_{ema,prev}
 $$
 
+![](https://img.shields.io/badge/status-v1.0.0__release-brightgreen) ![](<https://img.shields.io/badge/stack-Qt_6(C++17)-0052CC>) ![](https://img.shields.io/badge/harness-Opencode+OMO-009688) ![](https://img.shields.io/badge/AI-MiniMax--M2.5-8A2BE2) ![](https://img.shields.io/badge/2026.02-888888)
+
+</details>
+
+<details>
+<summary><strong><a href="https://github.com/AkutaZehy/osumania_estimator">osumania_estimator</a>（⭐）</strong> — osu!mania 4K 键型分析与难度估算 overlay（tosu 插件）</summary>
+
+分析 4K 谱面的键型与难度：游戏内实时显示当前段落键型与密度，选图界面给出 Sunny 星数、键型分布条与 Jack/Stream/Tech/Stamina/LN 等详细指标面板。
+
+![](https://img.shields.io/badge/status-v4.3.0-brightgreen) ![](https://img.shields.io/badge/stack-TypeScript+esbuild-0052CC) ![](https://img.shields.io/badge/harness-Opencode+OMO-009688) ![](https://img.shields.io/badge/harness-ZCode-009688) ![](https://img.shields.io/badge/AI-DeepSeek_V4_Flash+GLM_5.3_Flash+GPT_5.6_Luna-8A2BE2) ![](https://img.shields.io/badge/2026.09-888888)
+
 </details>
 
 <details>
@@ -112,14 +123,25 @@ $$
 
 | 标题                                                         | 简介                                                                                                                               | 信息                                                                                                                                                                                                                                    | 附注                                              |
 | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| <a href="https://github.com/AkutaZehy/srt2sub">SRT2SUB</a>   | forked from [srt-to-AfterEffects-Captions](https://github.com/Slayemus/srt-to-AfterEffects-Captions)<br>对算法稍作改进以加速渲染。 | ![](https://img.shields.io/badge/stack-HTML5-blue) ![](https://img.shields.io/badge/2025.08-888888)                                                                                                                                     | 还是使用 [Aegisub](https://aegisub.org/) 吧。     |
+| <a href="https://github.com/AkutaZehy/srt2sub">SRT2SUB</a>   | forked from [srt-to-AfterEffects-Captions](https://github.com/Slayemus/srt-to-AfterEffects-Captions)<br>对算法稍作改进以加速渲染。 | ![](https://img.shields.io/badge/stack-HTML5-blue) ![](https://img.shields.io/badge/NO_AI-888888) ![](https://img.shields.io/badge/2025.08-888888)                                                                                     | 还是使用 [Aegisub](https://aegisub.org/) 吧。     |
 | <a href="https://github.com/AkutaZehy/WaveGenQ">WaveGenQ</a> | 音频波形图生成工具                                                                                                                 | ![](https://img.shields.io/badge/status-V1.0.0-brightgreen) ![](https://img.shields.io/badge/stack-HTML5-blue) ![](https://img.shields.io/badge/AI-Copilot_Sonnet_4.5-8A2BE2) ![](https://img.shields.io/badge/2025.11-888888)          |
-| <a href="https://github.com/AkutaZehy/GitGUI">GitGUI</a>     | Git+GUI                                                                                                                            | ![](https://img.shields.io/badge/status-v1.2.0__release-brightgreen) ![](https://img.shields.io/badge/stack-Wails_v2-0052CC) ![](https://img.shields.io/badge/AI-MiniMax--M2.5-8A2BE2) ![](https://img.shields.io/badge/2026.03-888888) | 推荐 [Sourcetree](https://www.sourcetreeapp.com/) |
+| <a href="https://github.com/AkutaZehy/GitGUI">GitGUI</a>     | Git+GUI                                                                                                                            | ![](https://img.shields.io/badge/status-v1.2.0__release-brightgreen) ![](https://img.shields.io/badge/stack-Wails_v2-0052CC) ![](https://img.shields.io/badge/harness-Opencode+OMO-009688) ![](https://img.shields.io/badge/AI-MiniMax--M2.5-8A2BE2) ![](https://img.shields.io/badge/2026.03-888888) | 推荐 [Sourcetree](https://www.sourcetreeapp.com/) |
 
 </details>
 
 ~~因为实在是看 nodejs 这种重量级不顺眼~~
 
 所以有些纯前端，可以用 file 协议打开使用（浏览器直接开 index.html 就行）；有些存在跨域问题的（比如 Color Compass）可以用 [Live Server](https://github.com/tapio/live-server) 开，这个是 VS Code 的插件。
+
+## Skills
+
+<details>
+<summary><strong><a href="https://github.com/AkutaZehy/zcode-wallet">zcode-wallet</a></strong> — ZCode token/额度账本的只读分析工具</summary>
+
+回答"我的额度都烧哪儿了"：以只读方式查询 ZCode 本地 SQLite 账本，按项目/提供商/调用类型/时间任意组合过滤，峰谷感知计费估算，还能算出 compact 扔掉了多少上下文。单文件、零依赖（纯 Python 标准库），仓库附带 ZCode Skill 包装，可直接作为技能安装。
+
+![](<https://img.shields.io/badge/stack-Python(stdlib_only)-0052CC>) ![](https://img.shields.io/badge/AI-GLM_5.3_Flash-8A2BE2) ![](https://img.shields.io/badge/2026.09-888888)
+
+</details>
 
 如果试过了这些库中的某些并且觉得还可以的话欢迎加 Star，当然白嫖也没关系请遵守开源协议\*v-
