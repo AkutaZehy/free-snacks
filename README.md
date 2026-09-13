@@ -144,4 +144,13 @@ $$
 
 </details>
 
+<details>
+<summary><strong><a href="https://github.com/AkutaZehy/memory-hygiene">memory-hygiene</a></strong> — 给编码 agent 的记忆文件卫生规范（Skill）</summary>
+
+核心主张：记忆每一条要么引导行为、要么污染行为——记终态别记流水账，说做什么别说别做什么。源自一次对 10 个项目 / 91 个记忆文件的真实审计（粉红大象否定式指令、134KB 日志体、被写坏的 frontmatter），产出正向表述、终态优先、大小预算三条规则与一份审计 grep 清单。纯 Markdown Skill，无 hook 无依赖。
+
+![](https://img.shields.io/badge/stack-SKILL.md-0052CC) ![](https://img.shields.io/badge/AI-GLM_5.3_Flash-8A2BE2) ![](https://img.shields.io/badge/2026.09-888888)
+
+</details>
+
 如果试过了这些库中的某些并且觉得还可以的话欢迎加 Star，当然白嫖也没关系请遵守开源协议\*v-
