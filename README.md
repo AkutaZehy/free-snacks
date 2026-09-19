@@ -67,7 +67,7 @@ btw 目前算法里面超像素相关的部分是坏的但是懒得再改了。
 
 现版本已基于 Wails v2（Go + SQLite）完全重写，历史上的 Tauri 实现存档于 [`archive/1.0.0-dev-tauri`](https://github.com/AkutaZehy/Annoti/tree/archive/1.0.0-dev-tauri) 分支。
 
-![](https://img.shields.io/badge/status-v1.0.0--delta-orange) ![](<https://img.shields.io/badge/stack-Wails_v2(Go)+Vue_3+SQLite-0052CC>) ![](https://img.shields.io/badge/harness-ZCode-009688) ![](https://img.shields.io/badge/AI-GLM_5.3+GLM_5.3_Flash-8A2BE2) ![](https://img.shields.io/badge/2026.09-888888)
+![](https://img.shields.io/badge/status-v2.2.0--alpha-orange) ![](<https://img.shields.io/badge/stack-Wails_v2(Go)+Vue_3+SQLite-0052CC>) ![](https://img.shields.io/badge/harness-ZCode-009688) ![](https://img.shields.io/badge/AI-GLM_5.3+GLM_5.3_Flash-8A2BE2) ![](https://img.shields.io/badge/2026.09-888888)
 
 </details>
 
@@ -103,7 +103,7 @@ $$
 KPS_{ema} = \alpha \cdot KPS_{instant} + (1-\alpha) \cdot KPS_{ema,prev}
 $$
 
-![](https://img.shields.io/badge/status-v1.0.0__release-brightgreen) ![](<https://img.shields.io/badge/stack-Qt_6(C++17)-0052CC>) ![](https://img.shields.io/badge/harness-Opencode+OMO-009688) ![](https://img.shields.io/badge/AI-MiniMax--M2.5-8A2BE2) ![](https://img.shields.io/badge/2026.02-888888)
+![](https://img.shields.io/badge/status-v1.2.0__release-brightgreen) ![](<https://img.shields.io/badge/stack-Qt_6(C++17)-0052CC>) ![](https://img.shields.io/badge/harness-Opencode+OMO-009688) ![](https://img.shields.io/badge/AI-MiniMax--M2.5-8A2BE2) ![](https://img.shields.io/badge/2026.02-888888)
 
 </details>
 
@@ -125,7 +125,7 @@ $$
 | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
 | <a href="https://github.com/AkutaZehy/srt2sub">SRT2SUB</a>   | forked from [srt-to-AfterEffects-Captions](https://github.com/Slayemus/srt-to-AfterEffects-Captions)<br>对算法稍作改进以加速渲染。 | ![](https://img.shields.io/badge/stack-HTML5-blue) ![](https://img.shields.io/badge/NO_AI-888888) ![](https://img.shields.io/badge/2025.08-888888)                                                                                     | 还是使用 [Aegisub](https://aegisub.org/) 吧。     |
 | <a href="https://github.com/AkutaZehy/WaveGenQ">WaveGenQ</a> | 音频波形图生成工具                                                                                                                 | ![](https://img.shields.io/badge/status-V1.0.0-brightgreen) ![](https://img.shields.io/badge/stack-HTML5-blue) ![](https://img.shields.io/badge/AI-Copilot_Sonnet_4.5-8A2BE2) ![](https://img.shields.io/badge/2025.11-888888)          |
-| <a href="https://github.com/AkutaZehy/GitGUI">GitGUI</a>     | Git+GUI                                                                                                                            | ![](https://img.shields.io/badge/status-v1.2.0__release-brightgreen) ![](https://img.shields.io/badge/stack-Wails_v2-0052CC) ![](https://img.shields.io/badge/harness-Opencode+OMO-009688) ![](https://img.shields.io/badge/AI-MiniMax--M2.5-8A2BE2) ![](https://img.shields.io/badge/2026.03-888888) | 推荐 [Sourcetree](https://www.sourcetreeapp.com/) |
+| <a href="https://github.com/AkutaZehy/GitGUI">GitGUI</a>     | Git+GUI                                                                                                                            | ![](https://img.shields.io/badge/status-v2.0.0__release-brightgreen) ![](https://img.shields.io/badge/stack-Wails_v2-0052CC) ![](https://img.shields.io/badge/harness-Opencode+OMO-009688) ![](https://img.shields.io/badge/AI-MiniMax--M2.5-8A2BE2) ![](https://img.shields.io/badge/2026.03-888888) | 推荐 [Sourcetree](https://www.sourcetreeapp.com/) |
 
 </details>
 
