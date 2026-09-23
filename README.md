@@ -133,24 +133,4 @@ $$
 
 所以有些纯前端，可以用 file 协议打开使用（浏览器直接开 index.html 就行）；有些存在跨域问题的（比如 Color Compass）可以用 [Live Server](https://github.com/tapio/live-server) 开，这个是 VS Code 的插件。
 
-## Skills
-
-<details>
-<summary><strong><a href="https://github.com/AkutaZehy/zcode-wallet">zcode-wallet</a></strong> — ZCode token/额度账本的只读分析工具</summary>
-
-回答"我的额度都烧哪儿了"：以只读方式查询 ZCode 本地 SQLite 账本，按项目/提供商/调用类型/时间任意组合过滤，峰谷感知计费估算，还能算出 compact 扔掉了多少上下文。单文件、零依赖（纯 Python 标准库），仓库附带 ZCode Skill 包装，可直接作为技能安装。
-
-![](<https://img.shields.io/badge/stack-Python(stdlib_only)-0052CC>) ![](https://img.shields.io/badge/AI-GLM_5.3_Flash-8A2BE2) ![](https://img.shields.io/badge/2026.09-888888)
-
-</details>
-
-<details>
-<summary><strong><a href="https://github.com/AkutaZehy/memory-hygiene">memory-hygiene</a></strong> — 给编码 agent 的记忆文件卫生规范（Skill）</summary>
-
-核心主张：记忆每一条要么引导行为、要么污染行为——记终态别记流水账，说做什么别说别做什么。源自一次对 10 个项目 / 91 个记忆文件的真实审计（粉红大象否定式指令、134KB 日志体、被写坏的 frontmatter），产出正向表述、终态优先、大小预算三条规则与一份审计 grep 清单。纯 Markdown Skill，无 hook 无依赖。
-
-![](https://img.shields.io/badge/stack-SKILL.md-0052CC) ![](https://img.shields.io/badge/AI-GLM_5.3_Flash-8A2BE2) ![](https://img.shields.io/badge/2026.09-888888)
-
-</details>
-
 如果试过了这些库中的某些并且觉得还可以的话欢迎加 Star，当然白嫖也没关系请遵守开源协议\*v-
