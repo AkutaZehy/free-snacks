@@ -18,22 +18,24 @@ Warning: This repository does not provide README in **any** other languages ​�
 ```bash
 📁 scripts/
 ├── shutdown.bat        # 关闭计算机（谨慎使用）
-├── clean_disk.bat      # 清理C盘缓存
+├── clean_disk.bat      # 清理系统垃圾文件
 ├── restart_dwm.bat     # 重启DWM（用于解决Win10 DWM卡顿）
 ├── gitbruh.bat         # BRUH Commit，快速提交Git代码
 │                       # 需配合 resources/sentences.txt 使用
 ├── remove_znkt.bat     # 移除〇〇网盘的智能看图
 ├── remove_bdrc.bat     # 移除百度网盘右键菜单
 ├── dosdel.bat          # 强制删除文件/目录
-└── remove_desktop_app_shortcuts.bat  # 移除桌面"应用类型"快捷方式（非文件夹），交互确认后送回收站
+├── remove_desktop_app_shortcuts.bat  # 移除桌面"应用类型"快捷方式（非文件夹），交互确认后送回收站
+└── font_compress.bat   # 字体压缩（TTF/OTF → WOFF2，可选子集化）
 ```
 
 附注：
 
-- clean_disk：最早出处不明。
+- clean_disk：清理 `%systemdrive%`/`%windir%`/`%userprofile%` 下的系统垃圾文件（`*.tmp` `*.log` `*.old` 等）、回收站、prefetch、cookies、recent、临时文件等；双击运行，提权后 Y/N 确认。清理目标为 Windows 经典系统垃圾清单，最早出处不明。
 - remove_znkt：原作者 [Xzonn](https://xzonn.top/posts/Remove-Intelligent-Image-Viewer.html)。
 - dosdel：突破权限、长路径（>260字符）及 DOS 保留名（如 `NUL`、`LPT1` 等）限制，移除在 Win32 API 下无法被直接删除的文件；文件被占用时无效。
 - remove_desktop_app_shortcuts：双击运行，先列出桌面所有快捷方式并标注类型（`[Application]`/`[Folder]`/`[OtherFile]`/`[Unknown]`），确认（`Y`）后才将"应用类型"——即指向 `.exe/.bat/.cmd/.com/.msi/.msp/.scr` 的快捷方式——送回收站（可恢复）；文件夹、其它文件、目标缺失或未知的快捷方式均保留。可选参数：`-Public`（同时扫描公共桌面）、`-IncludeUrl`（列出 `.url` 网页快捷方式，仅列不删）。不写日志。
+- font_compress：用 `fonttools` 把 TTF/OTF 压成更小的 WOFF2，可选子集化（只保留用到的字符）。用法：`font_compress <路径> [是否子集 true] [自定义字符表.txt]`。`<路径>` 为单个字体文件或一个目录（自动扫里面所有 `.ttf`/`.otf`）；第 2 参数为 `true` 时按字符表裁出子集再压，输出 `名字.subset.woff2`，否则整字库直接压出 `名字.woff2`；第 3 参数省略时用脚本目录下的 `font-compress-subset-text.txt`。需已安装 Python 的 `fonttools`（含 `brotli`）。注意：文件名为 `.bat` 但内容是 Bash 脚本，用 `bash font_compress ...` 调用（双击会被 cmd 当批处理跑）。原作者 [MoyuScript](https://github.com/MoyuScript)（MIT）。
 
 ## 油猴脚本
 
