@@ -10,17 +10,15 @@ if errorlevel 1 (
 )
 
 echo ==========================================
-echo         System Temp File Cleaner
+echo    System Junk File Cleaner (classic)
 echo ==========================================
 echo.
 echo The following items will be cleaned:
-echo   - User temp files
-echo   - System temp files
-echo   - Edge/IE cache
-echo   - Thumbnail cache
-echo   - DirectX shader cache
-echo   - Crash dumps
-echo   - Windows Update download cache
+echo   - %systemdrive% junk: *.tmp *.mp *.log *.gid *.chk *.old
+echo   - Recycle Bin: %systemdrive%\recycled
+echo   - %windir% junk: *.bak, prefetch, temp
+echo   - User cookies, recent items
+echo   - Temporary Internet Files, Local Settings temp
 echo.
 echo Please close all running programs first.
 echo.
@@ -31,46 +29,25 @@ if /i not "%confirm%"=="Y" (
     exit /b 0
 )
 
-set "count=0"
-
-echo.
-echo [1/8] Cleaning user temp files...
-del /f /s /q "%TEMP%\*" >nul 2>&1
-rd /s /q "%TEMP%" >nul 2>&1
-md "%TEMP%" >nul 2>&1
-set /a count+=1
-
-echo [2/8] Cleaning system temp files...
-del /f /s /q "%SYSTEMROOT%\Temp\*" >nul 2>&1
-set /a count+=1
-
-echo [3/8] Cleaning Edge/IE cache...
-del /f /s /q "%LOCALAPPDATA%\Microsoft\Windows\INetCache\*" >nul 2>&1
-set /a count+=1
-
-echo [4/8] Cleaning thumbnail cache...
-del /f /s /q "%LOCALAPPDATA%\Microsoft\Windows\Explorer\thumbcache_*" >nul 2>&1
-set /a count+=1
-
-echo [5/8] Cleaning DirectX shader cache...
-del /f /s /q "%LOCALAPPDATA%\D3DSCache\*" >nul 2>&1
-set /a count+=1
-
-echo [6/8] Cleaning crash dumps...
-del /f /s /q "%LOCALAPPDATA%\CrashDumps\*" >nul 2>&1
-set /a count+=1
-
-echo [7/8] Cleaning Windows Error Reports...
-del /f /s /q "%LOCALAPPDATA%\Microsoft\Windows\WER\*" >nul 2>&1
-set /a count+=1
-
-echo [8/8] Cleaning Windows Update download cache...
-del /f /s /q "%SYSTEMROOT%\SoftwareDistribution\Download\*" >nul 2>&1
-set /a count+=1
+del /f /s /q %systemdrive%\*.tmp
+del /f /s /q %systemdrive%\*._mp
+del /f /s /q %systemdrive%\*.log
+del /f /s /q %systemdrive%\*.gid
+del /f /s /q %systemdrive%\*.chk
+del /f /s /q %systemdrive%\*.old
+del /f /s /q %systemdrive%\recycled\*.*
+del /f /s /q %windir%\*.bak
+del /f /s /q %windir%\prefetch\*.*
+rd /s /q %windir%\temp & md %windir%\temp
+del /f /q %userprofile%\cookies\*.*
+del /f /q %userprofile%\recent\*.*
+del /f /s /q "%userprofile%\Local Settings\Temporary Internet Files\*.*"
+del /f /s /q "%userprofile%\Local Settings\Temp\*.*"
+del /f /s /q "%userprofile%\recent\*.*"
 
 echo.
 echo ==========================================
-echo Cleaning complete! Processed %count% categories.
+echo Cleaning complete! System junk removed.
 echo ==========================================
 echo.
 pause
