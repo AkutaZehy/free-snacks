@@ -1,0 +1,38 @@
+# Unicode 汉语注音扩展（Bopomofo Extended）
+# 共32字（编码范围U+31A0-U+31BF）
+# https://www.unicode.org/charts/PDF/U31A0.pdf
+# https://www.unicode.org/charts/nameslist/n_31A0.html
+# https://www.unicode.org/charts/nameslist/c_31A0.html
+
+ㆠ
+ㆡ
+ㆢ
+ㆣ
+ㆤ
+ㆥ
+ㆦ
+ㆧ
+ㆨ
+ㆩ
+ㆪ
+ㆫ
+ㆬ
+ㆭ
+ㆮ
+ㆯ
+ㆰ
+ㆱ
+ㆲ
+ㆳ
+ㆴ
+ㆵ
+ㆶ
+ㆷ
+ㆸ
+ㆹ
+ㆺ
+ㆻ
+ㆼ
+ㆽ
+ㆾ
+ㆿ
