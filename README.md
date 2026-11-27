@@ -26,7 +26,13 @@ Warning: This repository does not provide README in **any** other languages ​�
 ├── remove_bdrc.bat     # 移除百度网盘右键菜单
 ├── dosdel.bat          # 强制删除文件/目录
 ├── remove_desktop_app_shortcuts.bat  # 移除桌面"应用类型"快捷方式（非文件夹），交互确认后送回收站
-└── font_compress.bat   # 字体压缩（TTF/OTF → WOFF2，可选子集化）
+└── font-tools/         # 字体工具箱（依赖 Python + fonttools，详见附注）
+    ├── font_compress.sh               # TTF/OTF → WOFF2 压缩，可选子集化
+    ├── font-compress-subset-text.txt  # 默认字表：现代汉语常用3500字 + 常用符号
+    ├── inspect_font.py                # 字体字符普查（字符清单 + 区段统计）
+    ├── generate_three_subsets.py      # 按语料切 zh-CN / zh-Hant / ja-JP 三套子集
+    ├── build_char_table.py            # 生成子集化字表（字体产线 / 语料合并两条路线）
+    └── corpora/                       # 语言语料字表（整理自 hanzi-chars）
 ```
 
 附注：
@@ -35,7 +41,13 @@ Warning: This repository does not provide README in **any** other languages ​�
 - remove_znkt：原作者 [Xzonn](https://xzonn.top/posts/Remove-Intelligent-Image-Viewer.html)。
 - dosdel：突破权限、长路径（>260字符）及 DOS 保留名（如 `NUL`、`LPT1` 等）限制，移除在 Win32 API 下无法被直接删除的文件；文件被占用时无效。
 - remove_desktop_app_shortcuts：双击运行，先列出桌面所有快捷方式并标注类型（`[Application]`/`[Folder]`/`[OtherFile]`/`[Unknown]`），确认（`Y`）后才将"应用类型"——即指向 `.exe/.bat/.cmd/.com/.msi/.msp/.scr` 的快捷方式——送回收站（可恢复）；文件夹、其它文件、目标缺失或未知的快捷方式均保留。可选参数：`-Public`（同时扫描公共桌面）、`-IncludeUrl`（列出 `.url` 网页快捷方式，仅列不删）。不写日志。
-- font_compress：用 `fonttools` 把 TTF/OTF 压成更小的 WOFF2，可选子集化（只保留用到的字符）。用法：`font_compress <路径> [是否子集 true] [自定义字符表.txt]`。`<路径>` 为单个字体文件或一个目录（自动扫里面所有 `.ttf`/`.otf`）；第 2 参数为 `true` 时按字符表裁出子集再压，输出 `名字.subset.woff2`，否则整字库直接压出 `名字.woff2`；第 3 参数省略时用脚本目录下的 `font-compress-subset-text.txt`。需已安装 Python 的 `fonttools`（含 `brotli`）。注意：文件名为 `.bat` 但内容是 Bash 脚本，用 `bash font_compress ...` 调用（双击会被 cmd 当批处理跑）。原作者 [MoyuScript](https://github.com/MoyuScript)（MIT）。
+- font-tools（`scripts/font-tools/`，需 `python -m pip install fonttools brotli`）：
+  - **font_compress**：用 `fonttools` 把 TTF/OTF 压成更小的 WOFF2，可选子集化（只保留用到的字符）。用法：`bash font_compress.sh <路径> [是否子集 true] [自定义字符表.txt]`。`<路径>` 为单个字体文件或一个目录（自动扫里面所有 `.ttf`/`.otf`）；第 2 参数为 `true` 时按字符表裁出子集再压，输出 `名字.subset.woff2`，否则整字库直接压出 `名字.woff2`；第 3 参数省略时用脚本目录下的默认字表。调用走 `python -m fontTools.*`（省去把 pip Scripts 目录加进 PATH），subset 失败立即退出。原作者 [MoyuScript](https://github.com/MoyuScript)（MIT），脚本抄录自 [rain2307 的「字体压缩」Gist](https://gist.github.com/rain2307/78028834596df9823486413b98bbf12a)——版权归属仅见脚本内一行声明，原仓库未能查证；本地已改：缺表/错表明确报错、`python -m` 调用、subset 失败即停。
+  - **默认字表 font-compress-subset-text.txt**：即《现代汉语常用3500字》，共 4345 个唯一字符 = 3502 个汉字（U+4E00–9FFF）+ ASCII + 中日标点 + 假名（平 83 / 片 86）+ 注音（37）+ 希腊（48）/西里尔（66）字母 + 拼音字母、制表符、数学符号等常用符号。来源同上 Gist（MIT）。子集化时字表里字体没有的字符会被自动忽略——假名、注音等特殊字符只在字体实际支持时保留。
+  - **inspect_font**：字体字符普查。`python inspect_font.py <字体目录|字体文件> [-o 输出目录]`，输出每个字体的完整字符清单（`.txt`）与 Unicode 区段统计（`.csv`），默认输出到 `font_reports/`。
+  - **generate_three_subsets**：按语料把字体切成 zh-CN / zh-Hant / ja-JP 三套独立 WOFF2 子集。`python generate_three_subsets.py <字体文件> [--corpus-dir <目录>] [--out-dir <目录>]`，输出含覆盖率统计与缺失字符清单。
+  - **build_char_table**：生成子集化字表（即 font_compress 第 3 参那种文件）。两种生成条件：`--from-font <字体>` = 字体 cmap ∩ Unicode 区段白名单；`--from-corpus <字表...> [--ascii] [--intersect-font <字体>]` = 合并多份语料字表（`#` 注释剔除、去重、保序）。例：`python build_char_table.py --from-corpus corpora/chinese/simplified/*.txt corpora/chinese/traditional/*_common.txt corpora/japanese/jis0208.txt --ascii -o my_table.txt`。
+  - **corpora/**：简繁日韩注音语料字表，整理自 [zispace/hanzi-chars](https://github.com/zispace/hanzi-chars)（各字表的原始出处如《通用规范汉字表》、Big5、JIS X 0208 等，见 hanzi-chars 仓库说明）。
 
 ## 油猴脚本
 
@@ -105,7 +117,7 @@ $$
 KPS_{ema} = \alpha \cdot KPS_{instant} + (1-\alpha) \cdot KPS_{ema,prev}
 $$
 
-![](https://img.shields.io/badge/status-v1.2.0__release-brightgreen) ![](<https://img.shields.io/badge/stack-Qt_6(C++17)-0052CC>) ![](https://img.shields.io/badge/harness-Opencode+OMO-009688) ![](https://img.shields.io/badge/AI-MiniMax--M2.5-8A2BE2) ![](https://img.shields.io/badge/2026.02-888888)
+![](https://img.shields.io/badge/status-v2.0.0__release-brightgreen) ![](<https://img.shields.io/badge/stack-Qt_6(C++17)-0052CC>) ![](https://img.shields.io/badge/harness-ZCode-009688) ![](https://img.shields.io/badge/AI-DeepSeek_Flash+MiniMax_M3.1_Flash+GLM_5.3_Flash等-8A2BE2) ![](https://img.shields.io/badge/2026.09-888888)
 
 </details>
 
@@ -114,7 +126,7 @@ $$
 
 分析 4K 谱面的键型与难度：游戏内实时显示当前段落键型与密度，选图界面给出 Sunny 星数、键型分布条与 Jack/Stream/Tech/Stamina/LN 等详细指标面板。
 
-![](https://img.shields.io/badge/status-v4.3.0-brightgreen) ![](https://img.shields.io/badge/stack-TypeScript+esbuild-0052CC) ![](https://img.shields.io/badge/harness-Opencode+OMO-009688) ![](https://img.shields.io/badge/harness-ZCode-009688) ![](https://img.shields.io/badge/AI-DeepSeek_V4_Flash+GLM_5.3_Flash+GPT_5.6_Luna-8A2BE2) ![](https://img.shields.io/badge/2026.09-888888)
+![](https://img.shields.io/badge/status-v4.5.0-brightgreen) ![](https://img.shields.io/badge/stack-TypeScript+esbuild-0052CC) ![](https://img.shields.io/badge/harness-Opencode+OMO-009688) ![](https://img.shields.io/badge/harness-ZCode-009688) ![](https://img.shields.io/badge/AI-DeepSeek_Flash+MiniMax_M3.1_Flash等-8A2BE2) ![](https://img.shields.io/badge/2026.10-888888)
 
 </details>
 
